@@ -23,8 +23,7 @@ public:
 	~Attack();
 
 
-	
-
+	bool Resolve();
 };
 
                                                               

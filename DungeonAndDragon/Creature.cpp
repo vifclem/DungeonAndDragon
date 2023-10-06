@@ -2,6 +2,7 @@
 #include <vector>
 #include"Attack.h"
 #include<string>
+#include <cstdlib>
 using namespace std;
 
 Creature::Creature(string name, string description, int lifePoints, vector<Attack> attack, int defenceScore) {
@@ -20,7 +21,7 @@ Creature::Creature() {
 	mDescription = " Default";
 	mLifePoints = 100;
 	mAttack = vector<Attack>{ Attack() };
-	mDefenceScore = 20;
+	mDefenceScore = (rand() % 20);
 }
 
 Creature::~Creature() {

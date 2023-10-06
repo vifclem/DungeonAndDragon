@@ -1,8 +1,10 @@
 #pragma once
 #include "Creature.h"
+#include <vector>
+#include<iostream>
+#include<string>
 
-
-class Monster
+public class Monster:public Creature
 {
 
 
