@@ -16,8 +16,8 @@ Weapon::Weapon(string name, string description, WeaponTypes weaponTypes, int wei
 
 Weapon::Weapon() {
 
-	mName = "Default";
-	mDescription = "Default";
+	mName = "Sword";
+	mDescription = "Coupe coupe";
 	mWeaponType = WeaponTypes::Sword;
 	mWeight = 10;
 	mBuyingCost = 10;

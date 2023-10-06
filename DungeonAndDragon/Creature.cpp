@@ -17,8 +17,8 @@ Creature::Creature(string name, string description, int lifePoints, vector<Attac
 
 Creature::Creature() {
 
-	mName = " Default";
-	mDescription = " Default";
+	mName = " lacostTn";
+	mDescription = " Parle mal";
 	mLifePoints = 100;
 	mAttack = vector<Attack>{ Attack() };
 	mDefenceScore = (rand() % 20);

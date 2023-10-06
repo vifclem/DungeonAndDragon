@@ -4,8 +4,18 @@
 #include<iostream>
 #include<string>
 
-public class Monster:public Creature
+class Weapon;
+class Monster:public Creature
 {
+private:
+	int mMoney;
+	vector<Weapon> mWeapon;
+
+public:
+
+	Monster(int money, vector<Weapon> weapon);
+	Monster();
+	~Monster();
 
 
 };
