@@ -4,6 +4,7 @@
 #include <vector>
 #include<iostream>
 #include<string>
+#include <cstdlib>
 
 Attack::Attack(string Label, vector<Weapon> Weapon, int DamagesPoints, int AttackBonus) {
 
@@ -19,7 +20,7 @@ Attack::Attack() {
 	mLabel = " foudre ";
 	mWeapon = vector<Weapon>{ Weapon() };
 	mDamagesPoints = 20;
-	mAttackBonus = 10;
+	mAttackBonus = (rand() % 5);
 
 
 }
@@ -28,3 +29,6 @@ Attack::~Attack() {
 
 
 }
+
+
+
