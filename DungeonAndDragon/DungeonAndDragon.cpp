@@ -6,6 +6,7 @@
 #include "Merchant.h"
 #include "Weapon.h"
 
+
 using namespace std;
 
 #pragma region Class define

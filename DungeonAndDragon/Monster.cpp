@@ -1,12 +1,10 @@
 #include "Monster.h"
 #include "Weapon.h"
-#include <vector>
-#include<string>
 #include <cstdlib>
 using namespace std;
 
-
-Monster::Monster(int money, vector<Weapon> weapon) :Creature() {
+Monster::Monster(int money, vector<Weapon> weapon, string name, string description, int lifePoints, vector<Attack> attack, int defenceScore) 
+	:Creature(name, description, lifePoints, attack, defenceScore) {
 
 	mMoney = money;
 	mWeapon = weapon;

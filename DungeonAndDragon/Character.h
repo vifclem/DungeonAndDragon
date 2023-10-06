@@ -3,6 +3,7 @@
 #include <vector>
 #include "Weapon.h"
 #include "Creature.h"
+#include "Attack.h"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ enum class Race
 	Human
 };
 
-class Character
+class Character: public Creature
 {
 private:
 	string mFirstName;

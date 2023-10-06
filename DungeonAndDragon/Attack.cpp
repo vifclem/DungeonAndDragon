@@ -1,9 +1,5 @@
 #include "Attack.h"
-#include "Weapon.h"
 #include"Creature.h"
-#include <vector>
-#include<iostream>
-#include<string>
 #include <cstdlib>
 
 Attack::Attack(string Label, vector<Weapon> Weapon, int DamagesPoints, int AttackBonus) {
