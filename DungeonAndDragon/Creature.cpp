@@ -27,3 +27,12 @@ Creature::Creature() {
 Creature::~Creature() {
 
 }
+
+string Creature::GetName() {
+
+	return mName;
+}
+
+int Creature::GetDefenceScore() {
+	return mDefenceScore;
+}

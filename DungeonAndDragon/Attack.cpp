@@ -26,6 +26,10 @@ Attack::~Attack() {
 
 }
 
+bool Attack::Resolve(Creature creature){
+	return  (rand() % 20 + 1) + mAttackBonus >= creature.GetDefenceScore();
+}
+
 
 
 

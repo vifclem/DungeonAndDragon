@@ -29,6 +29,9 @@ public:
 	Creature();
 	~Creature();
 
+	string GetName();
+	int GetDefenceScore();
+
 
 };
 

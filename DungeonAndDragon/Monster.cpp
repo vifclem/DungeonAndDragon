@@ -16,3 +16,4 @@ Monster::Monster() :Creature() {
 }
 
 Monster::~Monster(){}
+

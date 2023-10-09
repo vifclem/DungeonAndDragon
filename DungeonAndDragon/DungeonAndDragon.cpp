@@ -14,6 +14,7 @@ using namespace std;
 Character player;
 Character ennemie;
 Merchant merchant;
+Creature creature;
 
 #pragma endregion
 
@@ -26,6 +27,8 @@ Weapon Staff = Weapon("Staff", "arme efficace", WeaponTypes::Staff, 10, 20, 20, 
 Weapon Sword = Weapon("Sword", "arme courte distance", WeaponTypes::Sword, 10, 20, 20, 1);
 
 #pragma endregion
+
+
 
 
 

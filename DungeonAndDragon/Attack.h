@@ -23,7 +23,7 @@ public:
 	~Attack();
 
 
-	bool Resolve();
+	bool Resolve(Creature creature);
 };
 
                                                               
