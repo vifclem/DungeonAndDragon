@@ -2,23 +2,31 @@
 #include "Weapon.h"
 #include"Creature.h"
 #include <vector>
-#include<iostream>
+//#include<iostream>
 #include<string>
 
 using namespace std;
+
+enum DamageType
+{
+	Bludgeoning,
+	Slashing,
+	Piercing,
+	Burning
+};
 
 class Attack
 {
 private:
 	string mLabel;
-	vector<Weapon> mWeapon;
+	Weapon mWeapon;
 	int mDamagesPoints;
 	DamageType mDamageType;
 	int mAttackBonus;
 
 public:
 
-	Attack(string Label, vector<Weapon> Weapon, int DamagesPoints, int AttackBonus);
+	Attack(string Label, Weapon Weapon, int DamagesPoints, DamageType DamageType,int AttackBonus);
 	Attack();
 	~Attack();
 

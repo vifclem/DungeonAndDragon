@@ -2,11 +2,12 @@
 #include"Creature.h"
 #include <cstdlib>
 
-Attack::Attack(string Label, vector<Weapon> Weapon, int DamagesPoints, int AttackBonus) {
+Attack::Attack(string Label, Weapon Weapon, int DamagesPoints, DamageType DamageType,int AttackBonus) {
 
 	mLabel = Label;
 	mWeapon = Weapon;
 	mDamagesPoints = DamagesPoints;
+	mDamageType = DamageType;
 	mAttackBonus = AttackBonus;
 
 }
@@ -14,9 +15,10 @@ Attack::Attack(string Label, vector<Weapon> Weapon, int DamagesPoints, int Attac
 Attack::Attack() {
 
 	mLabel = " foudre ";
-	mWeapon = vector<Weapon>{ Weapon() };
+	mWeapon = Weapon();
 	mDamagesPoints = 20;
-	mAttackBonus = (rand() % 5);
+	mDamageType = DamageType::Burning;
+	mAttackBonus = (rand() % 5 + 1);
 
 
 }

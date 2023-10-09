@@ -4,13 +4,7 @@
 using namespace std;
 
 class Attack;
-enum DamageType
-{
-	Bludgeoning,
-	Slashing,
-	Piercing,
-	Burning
-};
+
 
 class Creature
 {
@@ -31,6 +25,8 @@ public:
 
 	string GetName();
 	int GetDefenceScore();
+
+	//heal fonction
 
 
 };

@@ -9,7 +9,8 @@
 using namespace std;
 
 
-Character::Character(string name, string lastName, string catchPhrase, int money, int lifePoints, vector<Weapon> weapon, Race race) :Creature() {
+Character::Character(string name, string lastName, string catchPhrase, int money, int lifePoints, vector<Weapon> weapon, Race race, string description, vector<Attack> attack, int defenceScore)
+	:Creature(name, description, lifePoints, attack, defenceScore) {
 
 	mFirstName = name;
 	mLastName = lastName;
@@ -21,7 +22,7 @@ Character::Character(string name, string lastName, string catchPhrase, int money
 
 }
 
-Character::Character() {
+Character::Character():Creature() {
 
 	mFirstName = "clem";
 	mLastName = "expert";

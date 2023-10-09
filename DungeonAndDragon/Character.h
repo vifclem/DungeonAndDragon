@@ -37,7 +37,7 @@ private:
 
 
 public:
-	Character(string name, string lasteName, string catchPhrase, int money, int lifePoints, vector<Weapon> weapon, Race race);
+	Character(string name, string lasteName, string catchPhrase, int money, int lifePoints, vector<Weapon> weapon, Race race, string description, vector<Attack> attack, int defenceScore);
 	Character();
 	~Character();
 

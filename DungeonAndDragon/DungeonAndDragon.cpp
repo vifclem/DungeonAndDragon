@@ -5,9 +5,12 @@
 #include "Character.h"
 #include "Merchant.h"
 #include "Weapon.h"
+//#include "Attack.h"
+
 
 
 using namespace std;
+
 
 #pragma region Class define
 
@@ -19,12 +22,21 @@ Creature creature;
 #pragma endregion
 
 
+
 #pragma region weapon define
 
 Weapon bow = Weapon("Arc", "arme a longue distance", WeaponTypes::Bow, 10, 20, 20, 1);
 Weapon Dagger = Weapon("Dagger", "arme de poing", WeaponTypes::Dagger, 10, 20, 20, 1);
 Weapon Staff = Weapon("Staff", "arme efficace", WeaponTypes::Staff, 10, 20, 20, 1);
 Weapon Sword = Weapon("Sword", "arme courte distance", WeaponTypes::Sword, 10, 20, 20, 1);
+
+#pragma endregion
+
+#pragma region attack define
+//Attack crush = Attack("crush", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1);
+
+
+
 
 #pragma endregion
 
@@ -137,7 +149,7 @@ void MerchantIntroduce() {
 
 void Fight() {
 
-    ennemie = Character("Bangala", " bieloRusse", " Va mourir", 50, 100, vector<Weapon>{ Sword}, Race::Orc);
+    ennemie = Character("Bangala", " bieloRusse", " Va mourir", 50, 100, vector<Weapon>{ Sword}, Race::Orc, "Creature horrible", vector<Attack>{Attack()}, (rand() % 20));
     ennemie.IntroduceChara();
     cout << " Que veut tu faire ? " << endl;
     cout << "1 : Le frapper en premier " << endl;
