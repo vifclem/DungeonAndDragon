@@ -56,6 +56,7 @@ public:
 	void SetMoney(int money);
 	void Use(Character& character, int weapon);
 	string GetWeaponDurability(int weapon);
+	int h;
 	
 
 
