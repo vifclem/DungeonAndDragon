@@ -36,3 +36,13 @@ string Creature::GetName() {
 int Creature::GetDefenceScore() {
 	return mDefenceScore;
 }
+
+int Creature::GetLifePoints() {
+	return mLifePoints;
+}
+
+void Creature::IntroduceCreature() {
+	cout << " Voici ton adversaire : " << endl;
+	cout << " Il s'appel " << mName << " " << mDescription << endl;
+	cout << "Il a : " << mLifePoints << " points de vies ! " << " et " << mDefenceScore << " score de defense " << endl;
+}

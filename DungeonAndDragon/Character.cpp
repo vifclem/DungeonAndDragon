@@ -44,7 +44,7 @@ void Character::Update() {
 
 }
 
-void Character::Inventaire() {
+void Character::Inventaire(Creature creature) {
 
 	cout << "Hello ! Tu t'appel " << mFirstName << " " << mLastName << ", tu as " << mLifePoints << " points de vie et tu est un humain " << endl;
 
@@ -55,6 +55,8 @@ void Character::Inventaire() {
 	{
 		 cout << mWeapon[i].GetName() << endl;
 	}
+	cout << "Tes attaques sont : " << endl;
+	
 	cout << " Et tu as " << mMoney << " $" << endl;
 
 

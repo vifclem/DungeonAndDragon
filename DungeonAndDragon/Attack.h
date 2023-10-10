@@ -32,6 +32,7 @@ public:
 
 
 	bool Resolve(Creature creature);
+	string GetAttackName();
 };
 
                                                               

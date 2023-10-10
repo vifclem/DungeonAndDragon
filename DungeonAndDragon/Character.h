@@ -46,7 +46,7 @@ public:
 	void IntroduceChara();
 	void SetLifePoints(int lifePoints);
 	int GetLifePoints();
-	void Inventaire();
+	void Inventaire(Creature creature);
 	vector<Weapon> GetCharaWeapon();
 	void AddWeapon(Weapon weapon);
 	void DeleteWeapon(int position);

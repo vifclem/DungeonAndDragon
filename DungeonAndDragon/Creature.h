@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Attack;
@@ -25,7 +26,8 @@ public:
 
 	string GetName();
 	int GetDefenceScore();
-
+	int GetLifePoints();
+	void IntroduceCreature();
 	//heal fonction
 
 

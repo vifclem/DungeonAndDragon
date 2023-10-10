@@ -33,13 +33,18 @@ Weapon Sword = Weapon("Sword", "arme courte distance", WeaponTypes::Sword, 10, 2
 #pragma endregion
 
 #pragma region attack define
-Attack crush = Attack("crush", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
-Attack destroy = Attack("destroy", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
 Attack sucumb = Attack(" sucumb", bow, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
-Attack doomFist = Attack("doomFist", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
+Attack crush = Attack("crush", Dagger, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
+Attack destroy = Attack("destroy", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
+Attack doomFist = Attack("doomFist", Sword, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
 
 #pragma endregion
 
+#pragma region creature define
+
+Creature bouboule = Creature("BouBoule", " un enorme tat de merde", 50, vector<Attack>{crush}, (rand() % 20 + 1));
+
+#pragma endregion
 
 
 
@@ -82,7 +87,7 @@ void Choice() {
            
         else if (Banswer == 2) Fight();
 
-        else if (Banswer == 3) player.Inventaire();
+        else if (Banswer == 3) player.Inventaire(player);
 
     } while (Banswer != 1 && Banswer != 2 && Banswer != 3);
 
@@ -166,7 +171,7 @@ void Fight() {
 
 
 void Attacke() {
-    cout << " Qu'elle arme veut-tu utiliser ? " << endl;
+    cout << " Qu'elle arme veut-tu utiliser et quel attack ? " << endl;
     for (size_t i = 0; i < player.GetCharaWeapon().size(); i++)
     {
         cout << i + 1 << player.GetCharaWeapon()[i].GetName() << endl;
@@ -186,7 +191,6 @@ void Attacke() {
     
 
     ennemie.SetLifePoints(ennemie.GetLifePoints() - 20);
-    
     cout << " Vous l'avez bien toucher ! Il n'a plus que "<< ennemie.GetLifePoints() << endl;
     player.SetLifePoints(player.GetLifePoints() - 20);
     cout << " Attention il vient de vous attacker ! Vous avez perdu 20 points de vie. Il vous reste "<< player.GetLifePoints() << " point de vies " << endl;
@@ -217,21 +221,21 @@ int main()
     lifePoints = InputHandler();
 
 
-    cout << "Et pour finir, quel est ton arme ? " << endl;
-    cout << "1 : Un arc" << endl;
-    cout << "2 : Une dague" << endl;
-    cout << "3 : Un staff" << endl;
-    cout << "4 : Une epee" << endl;
+    cout << "Et pour finir, quel est ton arme ? Et ton attack" << endl;
+    cout << "1 : Un arc avec l'attaque sucumb " << endl;
+    cout << "2 : Une dague avec l'attaque crush" << endl;
+    cout << "3 : Un staff avec l'attaque destroy" << endl;
+    cout << "4 : Une epee avec l'attaque doomfist" << endl;
     int Aanswer;
 
     do {
          Aanswer = InputHandler();
 
-        if (Aanswer == 1) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ bow }, Race::Human, "Creature innofensive", vector<Attack>{doomFist}, (rand() % 20));
+        if (Aanswer == 1) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ bow }, Race::Human, "Creature innofensive", vector<Attack>{sucumb}, (rand() % 20));
 
-        else if (Aanswer == 2) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Dagger }, Race::Human, "Creature innofensive", vector<Attack>{doomFist}, (rand() % 20));
+        else if (Aanswer == 2) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Dagger }, Race::Human, "Creature innofensive", vector<Attack>{crush}, (rand() % 20));
         
-        else if (Aanswer == 3) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Staff }, Race::Human, "Creature innofensive", vector<Attack>{doomFist}, (rand() % 20));
+        else if (Aanswer == 3) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Staff }, Race::Human, "Creature innofensive", vector<Attack>{destroy}, (rand() % 20));
 
         else if (Aanswer == 4) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Sword }, Race::Human, "Creatureinnofensive", vector<Attack>{doomFist}, (rand() % 20));
         
