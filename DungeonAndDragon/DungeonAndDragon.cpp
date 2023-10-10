@@ -5,7 +5,7 @@
 #include "Character.h"
 #include "Merchant.h"
 #include "Weapon.h"
-//#include "Attack.h"
+#include "Attack.h"
 
 
 
@@ -33,10 +33,10 @@ Weapon Sword = Weapon("Sword", "arme courte distance", WeaponTypes::Sword, 10, 2
 #pragma endregion
 
 #pragma region attack define
-//Attack crush = Attack("crush", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1);
-
-
-
+Attack crush = Attack("crush", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
+Attack destroy = Attack("destroy", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
+Attack sucumb = Attack(" sucumb", bow, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
+Attack doomFist = Attack("doomFist", Staff, 20, DamageType::Bludgeoning, (rand() % 5 + 1));
 
 #pragma endregion
 
@@ -55,7 +55,7 @@ int lifePoints;
  
 void MerchantIntroduce();
 void Fight();
-void Attack();
+void Attacke();
 
 
 int InputHandler() {
@@ -149,7 +149,7 @@ void MerchantIntroduce() {
 
 void Fight() {
 
-    ennemie = Character("Bangala", " bieloRusse", " Va mourir", 50, 100, vector<Weapon>{ Sword}, Race::Orc, "Creature horrible", vector<Attack>{Attack()}, (rand() % 20));
+    ennemie = Character("Bangala", " bieloRusse", " Va mourir", 50, 100, vector<Weapon>{ Sword}, Race::Orc, "Creature horrible", vector<Attack>{crush}, (rand() % 20));
     ennemie.IntroduceChara();
     cout << " Que veut tu faire ? " << endl;
     cout << "1 : Le frapper en premier " << endl;
@@ -157,7 +157,7 @@ void Fight() {
     int Fanswer;
     do {
          Fanswer = InputHandler();
-        if (Fanswer == 1) Attack();
+        if (Fanswer == 1) Attacke();
     } while (Fanswer != 1);
     
 
@@ -165,7 +165,7 @@ void Fight() {
 
 
 
-void Attack() {
+void Attacke() {
     cout << " Qu'elle arme veut-tu utiliser ? " << endl;
     for (size_t i = 0; i < player.GetCharaWeapon().size(); i++)
     {
@@ -227,13 +227,13 @@ int main()
     do {
          Aanswer = InputHandler();
 
-        if (Aanswer == 1) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ bow }, Race::Human);
+        if (Aanswer == 1) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ bow }, Race::Human, "Creature innofensive", vector<Attack>{doomFist}, (rand() % 20));
 
-        else if (Aanswer == 2) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Dagger }, Race::Human);
+        else if (Aanswer == 2) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Dagger }, Race::Human, "Creature innofensive", vector<Attack>{doomFist}, (rand() % 20));
         
-        else if (Aanswer == 3) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Staff }, Race::Human);
+        else if (Aanswer == 3) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Staff }, Race::Human, "Creature innofensive", vector<Attack>{doomFist}, (rand() % 20));
 
-        else if (Aanswer == 4) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Sword }, Race::Human);
+        else if (Aanswer == 4) player = Character(firstName, lastName, catchPhrase, money, lifePoints, vector<Weapon>{ Sword }, Race::Human, "Creatureinnofensive", vector<Attack>{doomFist}, (rand() % 20));
         
        
     }
