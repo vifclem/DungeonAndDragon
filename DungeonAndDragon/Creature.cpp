@@ -41,6 +41,10 @@ int Creature::GetLifePoints() {
 	return mLifePoints;
 }
 
+void Creature::SetLifePoints(int lifePoints) {
+	mLifePoints = lifePoints;
+}
+
 void Creature::IntroduceCreature() {
 	cout << " Voici ton adversaire : " << endl;
 	cout << " Il s'appel " << mName << " " << mDescription << endl;

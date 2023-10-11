@@ -18,6 +18,7 @@ Character player;
 Character ennemie;
 Merchant merchant;
 Creature creature;
+Attack attack;
 
 #pragma endregion
 
@@ -164,6 +165,7 @@ void Fight() {
          Fanswer = InputHandler();
         if (Fanswer == 1) Attacke();
     } while (Fanswer != 1);
+
     
 
 }
@@ -171,31 +173,54 @@ void Fight() {
 
 
 void Attacke() {
-    cout << " Qu'elle arme veut-tu utiliser et quel attack ? " << endl;
-    for (size_t i = 0; i < player.GetCharaWeapon().size(); i++)
-    {
-        cout << i + 1 << player.GetCharaWeapon()[i].GetName() << endl;
+    cout << "Nous allons jeter le des pour savoir si ton attack peut toucher " << endl;
+    if (attack.Resolve(ennemie)) {
+        cout << "Super ton attack peut toucher ! " << endl;
+        cout << " Mainetant choisis qu'elle arme veut-tu utiliser " << endl;
+        for (size_t i = 0; i < player.GetCharaWeapon().size(); i++)
+        {
+            cout << i + 1 << player.GetCharaWeapon()[i].GetName() << endl;
 
-    }
-    int Gamswer;
-    do {
-        Gamswer = InputHandler();
-        if (Gamswer == 1 || Gamswer == 2) {
-           
-            //Weapon* weaponUse =&(player.GetCharaWeapon()[Gamswer - 1]);
-            player.Use(player, Gamswer - 1);
-            cout << " La durabiliter de ton arme est de : " << player.GetWeaponDurability(Gamswer-1) << endl;
         }
+        int Gamswer;
+        do {
+            Gamswer = InputHandler();
+            if (Gamswer == 1 || Gamswer == 2) {
 
-    } while (Gamswer != 1 && Gamswer != 2);
-    
+                player.Use(player, Gamswer - 1);
+            }
 
-    ennemie.SetLifePoints(ennemie.GetLifePoints() - 20);
-    cout << " Vous l'avez bien toucher ! Il n'a plus que "<< ennemie.GetLifePoints() << endl;
-    player.SetLifePoints(player.GetLifePoints() - 20);
-    cout << " Attention il vient de vous attacker ! Vous avez perdu 20 points de vie. Il vous reste "<< player.GetLifePoints() << " point de vies " << endl;
+        } while (Gamswer != 1 && Gamswer != 2);
 
 
+        ennemie.SetLifePoints(ennemie.GetLifePoints() - 20);
+        cout << " Vous l'avez bien toucher ! Il n'a plus que " << ennemie.GetLifePoints() << " points de vie " << endl;
+        cout<< "De ton coter ton arme a " << player.GetWeaponDurability(Gamswer - 1) << " points de durabiliter " << endl;
+        player.SetLifePoints(player.GetLifePoints() - 20);
+        cout << " Attention il vient de vous attacker ! Vous avez perdu 20 points de vie. Il vous reste " << player.GetLifePoints() << " point de vies " << endl;
+
+        cout << " Que veut tu faire ? " << endl;
+        cout << "1 : Le frapper " << endl;
+        cout << "2 : Te heal et partir " << endl;
+        int Panswer;
+        do {
+            Panswer = InputHandler();
+            if (Panswer == 1) Attacke();
+            if (Panswer == 2) {
+                //heal
+                 
+            }
+        } while (Panswer != 1 && Panswer != 2);
+    }
+    else
+    {
+        cout << " Malheuresement ton attack ne peut pas toucher..." << endl;
+        cout << "IL VIENT DONC TE T'ATTAQUER ! " << endl;
+        player.SetLifePoints(player.GetLifePoints() - 20);
+        cout << " Tu as " << player.GetLifePoints() << " points de vie " << endl;
+        Attacke();
+    }
+   
 }
 
 

@@ -28,6 +28,8 @@ public:
 	int GetDefenceScore();
 	int GetLifePoints();
 	void IntroduceCreature();
+	void SetLifePoints(int lifePoints);
+	
 	//heal fonction
 
 

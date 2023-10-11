@@ -38,8 +38,6 @@ public:
 	vector<Weapon> GetWeapon();
 	string GetMerchantName();
 	string ShopName();
-	string MerchantDescription();
-	string MerchantCatchPhrase();
 	float GetMerchantMoney();
 
 
