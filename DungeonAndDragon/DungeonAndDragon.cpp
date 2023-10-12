@@ -205,8 +205,8 @@ void Attacke(bool firstCall) {
                 }
 
             } while (Gamswer != 1 && Gamswer != 2);
-
-
+            
+ 
             ennemie.SetLifePoints(ennemie.GetLifePoints() - player.RollTheDice());
             
             cout << " Vous l'avez bien toucher ! Il n'a plus que " << ennemie.GetLifePoints() << " points de vie " << endl;
@@ -224,6 +224,7 @@ void Attacke(bool firstCall) {
                 if (Panswer == 2) {
                     player.SetLifePoints(player.GetLifePoints() + 20);
                     cout << "Super ! Tu t'est soigner..., tu as " << player.GetLifePoints() << " points de vie " << endl;
+                    Choice();
 
                 }
             } while (Panswer != 1 && Panswer != 2 && player.GetLifePoints() > 0 && ennemie.GetLifePoints() > 0);
@@ -232,7 +233,7 @@ void Attacke(bool firstCall) {
         {
             cout << " Malheuresement ton attack ne peut pas toucher..." << endl;
             cout << "IL VIENT DONC TE T'ATTAQUER ! " << endl;
-            player.SetLifePoints(player.GetLifePoints() - player.RollTheDice());
+            player.SetLifePoints(player.GetLifePoints() - 20);
             cout << " Tu as " << player.GetLifePoints() << " points de vie " << endl;
             Attacke();
         }

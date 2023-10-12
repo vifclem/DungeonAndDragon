@@ -110,11 +110,12 @@ int Character::RollTheDice() {
 	int firstRandom = (rand() % 6 + 1);
 	int secondRandom = (rand() % 6 + 1);
 	int thirdandom = (rand() % 6 + 1);
+	cout << "Tu as lancer 3 des de 6 pour connaitre les degats de ton attaque ! Les resultat sont :  " << firstRandom << " + " << secondRandom << " + " << thirdandom << " Et on ajoute a cela 2 " << endl;
+	cout << "Ton attaque fait donc " << firstRandom + secondRandom + thirdandom + 2 << " points de degats" << endl;
 
 	return firstRandom + secondRandom + thirdandom + 2;
 
-	cout << "Tu as lancer 3 des de 6 pour connaitre les degats de ton attaque ! Les resultat sont :  " << firstRandom << " + " << secondRandom << " + " << thirdandom << " Et on ajoute a cela 2 " << endl;
-	cout << "Ton attaque fait donc " << firstRandom + secondRandom + thirdandom + 2 << " points de degats" << endl;
+	
 	
 }
 
