@@ -94,7 +94,7 @@ void Character::DeleteWeapon(int position) {
 }
 
 
-void Character::LootMoney() {
+void Character::LootMoney(Character& money) {
 
 
 }
@@ -103,6 +103,8 @@ void Character::LootWeapon() {
 
 
 }
+
+
 
 int Character::GetMoney() {
 

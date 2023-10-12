@@ -207,7 +207,8 @@ void Attacke() {
             Panswer = InputHandler();
             if (Panswer == 1) Attacke();
             if (Panswer == 2) {
-                //heal
+                player.SetLifePoints(player.GetLifePoints() + 20);
+                cout << "Super ! Tu t'est soigner..., tu as " << player.GetLifePoints() << " points de vie " << endl;
                  
             }
         } while (Panswer != 1 && Panswer != 2);
