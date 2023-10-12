@@ -105,28 +105,36 @@ void MerchantIntroduce() {
     int Aanswer;
     do {
          Aanswer = InputHandler();
+       
 
-        if (Aanswer == 1) {
-            cout << "Voici mes armes : " << endl;
-            cout << " La quel veut tu acheter ? " << endl;
-            cout << " 1 : " << merchant.GetWeapon()[0].GetShopDescription() << endl;
-            cout << " 2 : " << merchant.GetWeapon()[1].GetShopDescription() << endl;
-            cout << " 3 : " << merchant.GetWeapon()[2].GetShopDescription() << endl;
-            cout << " 4 : " << merchant.GetWeapon()[3].GetShopDescription() << endl;
+       
+         if (Aanswer == 1) {
+             if (player.GetMoney() >= 15) {
+                 cout << "Voici mes armes : " << endl;
+                 cout << " La quel veut tu acheter ? " << endl;
+                 cout << " 1 : " << merchant.GetWeapon()[0].GetShopDescription() << endl;
+                 cout << " 2 : " << merchant.GetWeapon()[1].GetShopDescription() << endl;
+                 cout << " 3 : " << merchant.GetWeapon()[2].GetShopDescription() << endl;
+                 cout << " 4 : " << merchant.GetWeapon()[3].GetShopDescription() << endl;
 
 
-            int Banswer;
-            do {
-                 Banswer = InputHandler();
+                 int Banswer;
+                 do {
+                     Banswer = InputHandler();
 
-                if (Banswer == 1) merchant.SellWeapon(player, merchant.GetWeapon()[0], Banswer);
-                else if (Banswer == 2)  merchant.SellWeapon(player, merchant.GetWeapon()[1], Banswer);
-                else if (Banswer == 2)  merchant.SellWeapon(player, merchant.GetWeapon()[2], Banswer);
-                else if (Banswer == 3)  merchant.SellWeapon(player, merchant.GetWeapon()[3], Banswer);
+                     if (Banswer == 1) merchant.SellWeapon(player, merchant.GetWeapon()[0], Banswer);
+                     else if (Banswer == 2)  merchant.SellWeapon(player, merchant.GetWeapon()[1], Banswer);
+                     else if (Banswer == 2)  merchant.SellWeapon(player, merchant.GetWeapon()[2], Banswer);
+                     else if (Banswer == 3)  merchant.SellWeapon(player, merchant.GetWeapon()[3], Banswer);
 
-            } while (Banswer != 1 && Banswer != 2 && Banswer != 3 && Banswer != 4);
+                 } while (Banswer != 1 && Banswer != 2 && Banswer != 3 && Banswer != 4);
 
-        }
+             }
+             else
+             {
+                 cout << "Tu n'as pas assez d'argent pour acheter un arme " << endl;
+             }
+         }
         else if (Aanswer == 2)
         {
             cout << "Quel arme veut tu me vendre ? " << endl;
@@ -199,7 +207,8 @@ void Attacke(bool firstCall) {
             } while (Gamswer != 1 && Gamswer != 2);
 
 
-            ennemie.SetLifePoints(ennemie.GetLifePoints() - 20);
+            ennemie.SetLifePoints(ennemie.GetLifePoints() - player.RollTheDice());
+            
             cout << " Vous l'avez bien toucher ! Il n'a plus que " << ennemie.GetLifePoints() << " points de vie " << endl;
             cout << "De ton coter ton arme a " << player.GetWeaponDurability(Gamswer - 1) << " points de durabiliter " << endl;
             player.SetLifePoints(player.GetLifePoints() - 20);
@@ -223,7 +232,7 @@ void Attacke(bool firstCall) {
         {
             cout << " Malheuresement ton attack ne peut pas toucher..." << endl;
             cout << "IL VIENT DONC TE T'ATTAQUER ! " << endl;
-            player.SetLifePoints(player.GetLifePoints() - 20);
+            player.SetLifePoints(player.GetLifePoints() - player.RollTheDice());
             cout << " Tu as " << player.GetLifePoints() << " points de vie " << endl;
             Attacke();
         }
