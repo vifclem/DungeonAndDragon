@@ -50,8 +50,8 @@ public:
 	vector<Weapon> GetCharaWeapon();
 	void AddWeapon(Weapon weapon);
 	void DeleteWeapon(int position);
-	void LootMoney(Character& money);
-	void LootWeapon();
+	void LootMoney(Character& creature, Character& character);
+	void LootWeapon(Character& creature, Character& character,Weapon& weapon);
 	int GetMoney();
 	void SetMoney(int money);
 	void Use(Character& character, int weapon);

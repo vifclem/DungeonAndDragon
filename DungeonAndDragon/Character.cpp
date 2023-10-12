@@ -94,14 +94,16 @@ void Character::DeleteWeapon(int position) {
 }
 
 
-void Character::LootMoney(Character& money) {
+void Character::LootMoney(Character& creature, Character& character) {
 
-
+		character.SetMoney(GetMoney() + creature.mMoney);
+		cout << "Tu vient de loot un ennemie ! Tu as " << character.mMoney << " $ " << endl;
+		cout << " Tu as aussi recuperer son arme ! Va voir ton inventaire pour voir ta nouvelle arme " << endl;
 }
 
-void Character::LootWeapon() {
+void Character::LootWeapon(Character& creature, Character& character,Weapon& weapon) {
 
-
+	mWeapon.push_back(weapon);
 }
 
 
