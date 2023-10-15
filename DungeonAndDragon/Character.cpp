@@ -55,10 +55,7 @@ void Character::Inventaire(Creature creature) {
 	{
 		 cout << mWeapon[i].GetName() << endl;
 	}
-	cout << "Tes attaques sont : " << endl;
-	
 	cout << " Et tu as " << mMoney << " $" << endl;
-
 
 }
 

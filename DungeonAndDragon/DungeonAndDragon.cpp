@@ -173,7 +173,8 @@ void FightEnnemie() {
         do {
             Fanswer = InputHandler();
             if (Fanswer == 1) Attacke(true);
-        } while (Fanswer != 1);
+            if (Fanswer == 2) Choice();
+        } while (Fanswer != 1 && Fanswer != 2);
 
 
     }
